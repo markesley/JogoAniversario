@@ -109,3 +109,10 @@ button:active,
     box-shadow: none;
     background-color: inherit;
 }
+
+.option.selecionada {
+    background-color: #fff; /* ou qualquer cor que combine */
+    color: #000; /* letras pretas */
+    border: 2px solid #000;
+    font-weight: bold;
+}

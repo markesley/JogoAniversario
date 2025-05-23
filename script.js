@@ -113,13 +113,25 @@ function renderPergunta() {
     </div>
   `;
 
-  // Cria as opções via DOM para evitar problemas com quebras de linha
+  // Cria as opções via DOM
   const screen = app.querySelector('.screen');
   p.opcoes.forEach(op => {
     const div = document.createElement('div');
     div.className = 'option';
     div.textContent = op;
-    div.addEventListener('click', () => responder(op));
+    
+    div.addEventListener('click', () => {
+      // Remove seleção anterior
+      const opcoes = screen.querySelectorAll('.option');
+      opcoes.forEach(o => o.classList.remove('selecionada'));
+
+      // Marca a atual como selecionada
+      div.classList.add('selecionada');
+
+      // Verifica se está correta
+      responder(op);
+    });
+
     screen.appendChild(div);
   });
 }

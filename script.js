@@ -121,16 +121,19 @@ function renderPergunta() {
     div.textContent = op;
     
     div.addEventListener('click', () => {
-      // Remove seleção anterior
-      const opcoes = screen.querySelectorAll('.option');
-      opcoes.forEach(o => o.classList.remove('selecionada'));
+  // Remove seleção anterior
+  screen.querySelectorAll('.option').forEach(o => {
+    o.classList.remove('selecionada');
+    o.style.color = '';         // limpa eventual cor inline
+  });
 
-      // Marca a atual como selecionada
-      div.classList.add('selecionada');
+  // Marca a atual
+  div.classList.add('selecionada');
+  div.style.color = '#000';      // força o preto
 
-      // Verifica se está correta
-      responder(op);
-    });
+  // Verifica a resposta
+  responder(op);
+});
 
     screen.appendChild(div);
   });

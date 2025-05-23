@@ -43,6 +43,10 @@ button:hover {
 }
 
 .option {
+  color: #000;
+}
+
+.option {
   display: block;
   margin: 8px 0;
   padding: 10px;
@@ -107,12 +111,26 @@ button:active,
 .option:active {
     outline: none;
     box-shadow: none;
-    background-color: inherit;
+    /* sem background-color aqui */
 }
 
-.option.selecionada {
-    background-color: #fff; /* ou qualquer cor que combine */
-    color: #000; /* letras pretas */
-    border: 2px solid #000;
-    font-weight: bold;
+/* Aumenta a especificidade e garante com !important */
+.screen .option.selecionada {
+    background-color: #fff !important;
+    color: #000 !important;
+    border: 2px solid #000 !important;
+    font-weight: bold !important;
+}
+
+/* Se quiser manter hover mais suave, opcional: */
+.option:hover:not(.selecionada) {
+    background-color: #f1f1f1;
+}
+
+.screen.masculina .option.selecionada,
+.screen.feminina  .option.selecionada {
+  background-color: #fff !important;
+  color: #000   !important;
+  border: 2px solid #000 !important;
+  font-weight: bold      !important;
 }

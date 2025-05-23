@@ -7,7 +7,7 @@ let estiloAlternado = true;
 const perguntas = [
   {
     titulo: "Qual o seu anime preferido que marcou sua infância?",
-    opcoes: ["Naruto", "Dragon Ball", "Fairy Tail", "One Piece"],
+    opcoes: ["Naruto", "Fairy Tail", "Dragon Ball", "One Piece"],
     correta: "Fairy Tail"
   },
   {

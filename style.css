@@ -100,3 +100,12 @@ img {
   margin-bottom: 10px;
   font-weight: bold;
 }
+
+button:focus,
+button:active,
+.option:focus,
+.option:active {
+    outline: none;
+    box-shadow: none;
+    background-color: inherit;
+}
